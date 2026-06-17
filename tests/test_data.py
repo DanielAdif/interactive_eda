@@ -36,13 +36,13 @@ class TestPrepare:
 
     def test_is_ai_user_true_for_yes_responses(self, sample_df):
         df, _ = _prepare(sample_df.copy())
-        # "I use it frequently, almost daily" → no "yes" → False
-        # "Yes, but I rarely use it" → contains "yes" → True
-        assert df.loc[df["AISelect"] == "Yes, but I rarely use it (less than once a week)", "is_ai_user"].iloc[0] == True
+        # "Yes, I use AI tools daily" contains "yes" → True
+        assert df.loc[df["AISelect"] == "Yes, I use AI tools daily", "is_ai_user"].iloc[0] == True
 
     def test_is_ai_user_false_for_no_responses(self, sample_df):
         df, _ = _prepare(sample_df.copy())
-        assert df.loc[df["AISelect"] == "No, and I don't plan to", "is_ai_user"].iloc[0] == False
+        no_label = "No, I don't use AI tools, and I have no plans to in the future"
+        assert df.loc[df["AISelect"] == no_label, "is_ai_user"].iloc[0] == False
 
     def test_coerces_yearscode_to_numeric(self, sample_df):
         df, _ = _prepare(sample_df.copy())

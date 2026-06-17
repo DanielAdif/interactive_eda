@@ -6,8 +6,8 @@ import pandas as pd
 def sample_df():
     return pd.DataFrame({
         "AISelect": [
-            "I use it frequently, almost daily",
-            "No, and I don't plan to",
+            "Yes, I use AI tools daily",
+            "No, I don't use AI tools, and I have no plans to in the future",
             "Yes, but I rarely use it (less than once a week)",
             None,
         ],
