@@ -49,13 +49,6 @@ streamlit run app.py
 
 The browser opens automatically at `http://localhost:8501`.
 
-## Deploy to Streamlit Community Cloud
-
-1. Push this repository to a public GitHub repo.
-2. Go to [share.streamlit.io](https://share.streamlit.io) and click **New app**.
-3. Select your repo, branch (`main`), and set the entry point to `app.py`.
-4. Click **Deploy**. Streamlit Cloud installs `requirements.txt` automatically.
-5. Once deployed, paste the URL into the **Live Demo** section above.
 
 ## Dataset
 
